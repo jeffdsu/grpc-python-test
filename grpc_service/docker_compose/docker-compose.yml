@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  graph:
+    image: jeffdsu/grpc-graph
+    ports:
+      - "80:8000"
+    environment:
+      TODO_SERVICE_BASE_URL: "todo_service:50051"
+  user_service:
+    image: jeffdsu/grpc-user-service
+    ports:
+      - "50052:50051"
+  todo_service:
+    image: jeffdsu/grpc-to-do-service
+    ports:
+      - "50051:50051"
+    environment:
+      USER_SERVICE_BASE_URL: "user_service:50051"

@@ -1,0 +1,23 @@
+
+syntax = "proto3";
+
+
+package todo;
+
+
+// The greeting service definition.
+service User {
+  // Sends a greeting
+  rpc validateSession (ValidateSessionRequest) returns (Session) {}
+}
+
+// The request message containing the user's name.
+message ValidateSessionRequest {
+  string auth_token = 1;
+}
+
+// The response message containing the greetings
+message Session {
+  string id = 1;
+  string user_id = 2;
+}

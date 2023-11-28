@@ -1,0 +1,31 @@
+
+syntax = "proto3";
+
+
+package todo;
+
+
+// The greeting service definition.
+service ToDo {
+  // Sends a greeting
+  rpc getTodo (GetToDoRequest) returns (Todo) {}
+  rpc searchTodos (Null) returns (TodoSearchResult) {}
+}
+
+// The request message containing the user's name.
+message GetToDoRequest {
+  string id = 1;
+}
+
+message Null {
+    string id = 1;
+}
+
+// The response message containing the greetings
+message Todo {
+  string message = 1;
+}
+
+message TodoSearchResult {
+  repeated Todo todos = 1;
+}
