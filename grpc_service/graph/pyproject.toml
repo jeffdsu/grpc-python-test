@@ -11,6 +11,8 @@ python = "^3.11"
 grpcio = "^1.59.3"
 grpcio-tools = "^1.59.3"
 strawberry-graphql = {extras = ["debug-server"], version = "^0.215.1"}
+fastapi = "^0.109.0"
+uvicorn = "^0.27.0.post1"
 
 
 [build-system]

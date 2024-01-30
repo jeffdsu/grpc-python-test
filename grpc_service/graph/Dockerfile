@@ -8,8 +8,9 @@ COPY . .
 
 RUN poetry config virtualenvs.create false
 
+
 # Install project dependencies
 RUN poetry install --no-dev  # Omit '--no-dev' if you want development dependencies
 
 
-CMD [ "strawberry", "server", "schema" ]
+CMD uvicorn schema:app --host "0.0.0.0"
